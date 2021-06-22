@@ -1,0 +1,12 @@
+//
+//  {{ ClassName }}.h
+//  asd
+//
+//
+
+#import <Foundation/Foundation.h>
+
+@interface {{ ClassName }} : NSObject
+
+
+@end

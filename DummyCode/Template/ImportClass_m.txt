@@ -1,0 +1,30 @@
+//
+//  MoerFinanceImportClass.m
+//  asd
+//
+//
+
+#import "ImportClass.h"
+
+{% for p in ClassName %}
+#import "{{ p.key }}.h"{% /for %}
+
+@interface ImportClass ()
+
+@end
+
+@implementation ImportClass
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        NSMutableArray *array = [NSMutableArray new];
+    {% for p in ClassName %}
+        {{ p.key }} *{{ p.key | lowercase }} = [[{{ p.key }} alloc] init];
+        [array addObject:{{ p.key | lowercase }}];{% /for %}
+    }
+    return self;
+}
+
+@end
+
